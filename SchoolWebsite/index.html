@@ -7,8 +7,10 @@
     <title>广东海洋大学寸金学院</title>
     <link rel="shortcut icon" href="./img/icon/cunjin.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./util/reset.css">
+    <link rel="stylesheet" href="./util/Libraries/swiper-3.4.2.min.css">
     <link rel="stylesheet" href="./index.css">
     <link rel="stylesheet" href="./css/carouselimg.css">
+    <link rel="stylesheet" href="./css/swiper.css">
 </head>
 
 <body>
@@ -23,7 +25,7 @@
         </div>
     </div>
     <!-- 导航 -->
-    <div class="navsum content clearfix">
+    <div class="navsum content clearfix jsdh">
         <div class="navBar">
             <ul>
                 <li id="m1">
@@ -85,9 +87,12 @@
             </ul>
         </div>
         <div class="search">
-            <form action="">
-                <input type="image" src="img/search.png" style="cursor:pointer">
-            </form>
+                <input type="image" id="toggle-search" src="img/search.png" style="cursor:pointer">
+                <div id="search-form" action="" >
+                        <input id="inputSearch" size="30" type="search" placeholder="请输入关键字搜索!" 
+                            >
+                            <input id="inputImage" type="image" src="img/search1.png"  style="cursor:pointer">
+                </div> 
         </div>
     </div>
     <!-- 轮播图 -->
@@ -300,8 +305,8 @@
         <div class="hasMoreTab">
             <div class="hd">
                 <ul>
-                    <li class="on">校园快讯</li>
-                    <li>外媒聚焦</li>
+                    <li class="on" data-id="1">校园快讯</li>
+                    <li data-id="2">外媒聚焦</li>
                 </ul>
                 <span class="more">
                     <a href="javascript:void(0);">更多&gt;</a>
@@ -338,8 +343,8 @@
         <div class="tzgg">
             <div class="hd">
                 <ul>
-                    <li class="on">校园快讯</li>
-                    <li>外媒聚焦</li>
+                    <li class="on" data-id="1">通知公告</li>
+                    <li data-id="2">学术通告</li>
                 </ul>
                 <span class="more">
                     <a href="javascript:void(0);">更多&gt;</a>
@@ -349,8 +354,8 @@
                 <div class="con" style="width: 580px; height: 360px;">
                     <ul class="xyxx_list clearfix">
                         <li class="clearfix"><a href="javascript:void(0);" class="clearfix">
-                                <div class="date"><i class="day">21</i><i class="year">2012-12</i></div>
-                                <div class="infor"><b>我校教师受邀参加“海洋文化遗产保护与利用”学术研讨会并作主题报告<img src="./img/new2.png" /></b>
+                                <div class="date"><i class="day">15</i><i class="year">2022-05</i></div>
+                                <div class="infor"><b>2021-2022学年第二学期第十二周主要工作安排表<img src="./img/new2.png" /></b>
                                 </div>
                             </a></li>
                         <li class="clearfix"><a href="javascript:void(0);" class="clearfix">
@@ -375,19 +380,127 @@
         </div>
     </div>
     <!-- 专题网站 -->
-    <div class="part4">
+    <div class="part4 content">
+        <div class="ladyScroll">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"> <img src="https://www.zjkju.edu.cn/images/zhuantiwang.jpg"></div>
+                    <div class="swiper-slide"> <img src="https://www.zjkju.edu.cn/images/1111.jpg"></div>
+                    <div class="swiper-slide"> <img src="https://www.zjkju.edu.cn/images/xiao22.jpg"></div>
+                    <div class="swiper-slide"> <img src="https://www.zjkju.edu.cn/images/zhuantiwang2.jpg"></div>
+                    <div class="swiper-slide"> <img src="https://www.zjkju.edu.cn/images/zhuantiwang.jpg"></div>
+                    <div class="swiper-slide"> <img src="https://www.zjkju.edu.cn/images/1111.jpg"></div>
+                    <div class="swiper-slide"> <img src="https://www.zjkju.edu.cn/images/xiao22.jpg"></div>
+                    <div class="swiper-slide"> <img src="https://www.zjkju.edu.cn/images/zhuantiwang2.jpg"></div>
+                    <div class="swiper-slide"> <img src="https://www.zjkju.edu.cn/images/zhuantiwang.jpg"></div>
+                </div>
+            </div>
+            <!-- 导航按钮 -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
 
     </div>
     <!-- 二级学院 -->
     <div class="link_box">
+        <div class="link_box clearfix">
+            <div class="content clearfix">
+                <div class="hd_title scroll-visible visible-class">
+                    <h1>二级学院</h1>
+                    <!--            <div class="more"><a href="">更多></a></div>-->
+                </div>
+                <ul class="link clearfix">
+                    <li><a href="http://www.zjkju.edu.cn/economy" target="_blank">经济与金融学院</a></li>
 
+
+                    <li><a href="http://www.zjkju.edu.cn/management" target="_blank">管理学院</a></li>
+
+
+                    <li><a href="http://www.zjkju.edu.cn/kjxy" target="_blank">会计学院</a></li>
+
+
+                    <li><a href="http://www.zjkju.edu.cn/wgyxy" target="_blank">外国语学院</a></li>
+
+
+                    <li><a href="http://www.zjkju.edu.cn/ysxy" target="_blank">美术与设计学院</a></li>
+
+
+                    <li><a href="http://www.zjkju.edu.cn/yywdxy" target="_blank">音乐舞蹈学院</a></li>
+
+
+                    <li><a href="http://www.zjkju.edu.cn/jzgcxy" target="_blank">建筑工程学院</a></li>
+
+
+                    <li><a href="http://www.zjkju.edu.cn/machine" target="_blank">智能制造学院</a></li>
+
+
+                    <li><a href="http://www.zjkju.edu.cn/jyxy" target="_blank">教育学院</a></li>
+
+
+                    <li><a href="http://www.zjkju.edu.cn/whcmxy" target="_blank">文化传媒学院</a></li>
+
+
+                    <li><a href="http://www.zjkju.edu.cn/makesizhuyixueyuan" target="_blank">马克思主义学院</a></li>
+
+
+                    <li><a href="http://www.zjkju.edu.cn/gjjyxy" target="_blank">国际教育学院</a></li>
+
+
+                    <li><a href="http://www.zjkju.edu.cn/scxy" target="_blank">继续教育学院</a></li>
+
+
+                    <li><a href="http://www.zjkju.edu.cn/tcm" target="_blank">中医药学院</a></li>
+
+                </ul>
+            </div>
+        </div>
     </div>
     <!-- 底部 -->
-    <div class="footer">
+    <div id="footer">
+        <div class="Footer clearfix">
+            <div class="foot content clearfix">
+                <div class="foot_l clearfix">
+                    <dl>
+                        <dt>
+                            新湖校区
+                        </dt>
+                        <dd>
+                            广东省湛江市麻章区湖光镇教育城新坡路1号
+                        </dd>
+                        <dd>
+                            联系电话：（0759）3871366（校长办公室）/ 3263787、3151699（招生就业处）
+                        </dd>
+                    </dl>
+                    <dl style="margin-top:10px;">
+                        <dt>
+                            麻章校区
+                        </dt>
+                        <dd>
+                            广东省湛江市麻章区学智路2号
+                        </dd>
+                        <dd>
+                            联系电话：（0759）3871366（校长办公室）/ 3263787、3151699（招生就业处）
+                        </dd>
+                    </dl>
+                </div>
+                <div class="foot_r clearfix">
+                    <div class="wb "><img src="https://www.zjkju.edu.cn/img/wb.png" alt="">学校官博</div>
 
+                    <div class="wb wx"><img src="https://www.zjkju.edu.cn/img/wx.png" alt="">学校官微</div>
+
+                </div>
+            </div>
+        </div>
+        <p>
+            <!-- 版权内容请在本组件"内容配置-版权"处填写 -->
+        </p>
+        <p>版权所有 Copyright © 2015-2020 湛江科技学院 All Rights Reserved 仿制必究 <a href="https://beian.miit.gov.cn/"
+                target="_blank" style="color: rgb(255, 255, 255);">粤ICP备12049155号</a></p>
+        <p></p>
     </div>
 </body>
-<script src="./util/jquery.min.js"></script>
+<script src="./util/Libraries/jquery.min.js"></script>
+<script src="./util/Libraries/swiper-3.4.2.jquery.min.js"></script>
 <!-- common.js -->
 <script src="./util/common.js"></script>
 <!-- 渲染js 数据处理 -->
