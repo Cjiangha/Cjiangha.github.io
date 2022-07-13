@@ -48,8 +48,6 @@ function carouselImg(opt) {
         now = id
         console.log(now)
         domImage.attr('src', srcArray[id])
-        domImage.css()
-        $(this).addClass
     });
 
     /*
