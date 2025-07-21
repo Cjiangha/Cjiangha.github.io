@@ -40,8 +40,6 @@
     var toggleSearch = document.querySelector('#toggle-search')
     var toggleSearchSearch = document.querySelector("#inputSearch")
     var toggleSearchImg = document.querySelector('#inputImage')
-    console.log(toggleSearchSearch)
-    console.log(toggleSearchImg)
     // 使用事件委托，对全局的事件进行判断
     document.addEventListener("click", function (e) {
         // 判断被点击的元素是不是scheduleInput元素，不是的话，就隐藏之
@@ -49,7 +47,7 @@
         var target = e.target || e.srcElement;
         console.log(target)
         console.log(scheduleBox)
-        if (target == toggleSearch || target == toggleSearch || target == toggleSearchSearch || target == toggleSearchImg) {
+        if (target == toggleSearch || target == toggleSearchSearch || target == toggleSearchImg) {
             console.log('toggleSearch')
             $('#search-form').addClass('open')
         }
@@ -95,7 +93,8 @@
     let hastzggconfirst = $('.part3 .tzgg .bd>.con .xyxx_list:first-child')
     let hastzggconlast = $('.part3 .tzgg .bd>.con .xyxx_list:last-child')
     let tzgg = $('.part3 .tzgg .hd').find('ul li')
-    tzgg.on('click', function () {
+    tzgg.on('click', function (e) {
+        console.log('tzggtzggtzggtzggtzggtzggtzggtzggtzggtzgg',e)
         $(this).addClass('on').siblings().removeClass('on')
         let id = $(this).data('id')
         if ($(this).attr('class') === 'on') {

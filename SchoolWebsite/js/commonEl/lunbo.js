@@ -32,21 +32,17 @@ function carouselImg(opt) {
     let str = defaultopt.imgdata.map((item, index) => `<li data-id="${index + 1}"></li>`).join('')
     $(defaultopt.el).find('.hd ul').html(str)
     $(defaultopt.el).find('.hd li').siblings('li').eq(now).addClass('on').siblings().removeClass('on')//高亮元素 / css也可以写
-    // 鼠标移入
-    $(defaultopt.el).find('.hd li').on("mouseenter", function (event) {
-        // 1、普通写法
-        // $(this).addClass('on')//高亮
-        // $(this).siblings().removeClass('on')
-        //2、链式写法
-        $(this).addClass('on').siblings().removeClass('on')
-        // 如何找到  $(this).index????  data-id 可以获取
-        let domImage = $(this).parent().parent().next().children().find('li img')  //轮播图的img节点,已经找到了所有的img节点
-        let id = $(this).data('id') - 1
-        now = id
-        domImage.attr('src', srcArray[id])
-    });
+
+    /* 1.清除定时器 */
+    function clearTimer() {
+        if(timer){
+            clearInterval(timer);
+        }
+        timer = null;
+    }
 
     /*
+        2.
         自动轮播 + 高亮显示
         拿到当前的index值
         边界值 0 和 4
@@ -63,18 +59,32 @@ function carouselImg(opt) {
             domImage.attr('src', srcArray[now])
         }, defaultopt.time * 1000)
     }
-    zidong()
-
+    zidong();
     function gaoliang() {
         $(defaultopt.el).find('.hd li').eq(now).addClass('on').siblings().removeClass('on') //高亮
     }
 
+     // 3.鼠标移入下面的点
+     $(defaultopt.el).find('.hd li').on("mouseenter", function (event) {
+        clearTimer();
+        // 1、普通写法
+        // $(this).addClass('on')//高亮
+        // $(this).siblings().removeClass('on')
+        //2、链式写法
+        $(this).addClass('on').siblings().removeClass('on')
+        // 如何找到  $(this).index????  data-id 可以获取
+        let domImage = $(this).parent().parent().next().children().find('li img')  //轮播图的img节点,已经找到了所有的img节点
+        let id = $(this).data('id') - 1
+        now = id
+        domImage.attr('src', srcArray[id])
+    });
+
+
     /*
-       右侧点击
-         点击之后拿到索引，然后索引+1
-         边界值   0和4 
+       4.右侧点击 点击之后拿到索引，然后索引+1  边界值   0和4 
     */
     $(defaultopt.el).find('div.next').click(function () {
+        clearTimer();
         if (now >= 0 && now <= srcArray.length - 2) {
             now++
         } else if (now === srcArray.length - 1 || now === srcArray.length ) {
@@ -82,15 +92,15 @@ function carouselImg(opt) {
             now = 0
         }
         domImage.attr('src', srcArray[now])
-        gaoliang()
+        gaoliang();
     })
 
     /*
-      左侧点击
-      边界值 0 和 4
+      5.左侧点击 边界值 0 和 4
     */
 
     $(defaultopt.el).find('div.prev').click(function () {
+        clearTimer();
         if (now >= 1 && now <= srcArray.length - 1) {
             now--
         } else if (now === 0) {
@@ -100,13 +110,10 @@ function carouselImg(opt) {
         gaoliang()
     })
 
-    // 鼠标移入清除定时器
+    // 6.鼠标移入最大的盒子，清除定时器，移出继续轮播
     $(defaultopt.el).mouseenter(function () {
         console.log('鼠标移入')
-        if(timer){
-            clearInterval(timer);
-        }
-        timer = null;
+        clearTimer();
     }).mouseleave(function () {
         //鼠标移出
         zidong()
