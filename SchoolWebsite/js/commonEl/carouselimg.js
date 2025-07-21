@@ -13,7 +13,6 @@ function carouselimg() {
     // 获取节点的左边 怎么识别到对应的index？？ index
     let now = 0 //当前节点索引
     let domImage = $('#ibanner').find('.bd .on img') //图片节点
-    console.log(domImage)
     $('#ibanner').find('.hd li').siblings('li').eq(now).addClass('on').siblings().removeClass('on')//高亮元素 / css也可以写
     // 鼠标移入
     $('#ibanner').find('.hd li').on("mouseenter", function (event) {
@@ -83,8 +82,9 @@ function carouselimg() {
     })
 
     // 鼠标移入清除定时器
-    $('#ibanner').mouseenter(function () {
+    $('#ibanner').mouseenter(function (e) {
         console.log('鼠标移入')
+        console.log(e.target)
         clearInterval(timer);
     }).mouseleave(function () {
         zidong()
